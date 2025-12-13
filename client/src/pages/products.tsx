@@ -28,7 +28,7 @@ export default function Products() {
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [sortBy, setSortBy] = useState<SortOption>("newest");
   const [filters, setFilters] = useState({
-    categories: initialCategory ? [initialCategory] : [] as Category[],
+    categories: initialCategory ? [initialCategory] : ([] as Category[]),
     priceRange: [0, 500000] as [number, number],
     inStockOnly: false,
   });
@@ -70,7 +70,7 @@ export default function Products() {
       result = result.filter(
         (p) =>
           p.name.toLowerCase().includes(query) ||
-          p.description.toLowerCase().includes(query)
+          p.description.toLowerCase().includes(query),
       );
     }
 
@@ -80,7 +80,7 @@ export default function Products() {
 
     result = result.filter(
       (p) =>
-        p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1]
+        p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1],
     );
 
     if (filters.inStockOnly) {
@@ -125,11 +125,16 @@ export default function Products() {
                     className="text-2xl md:text-3xl font-bold"
                     data-testid="text-products-title"
                   >
-                    {searchQuery ? `Results for "${searchQuery}"` : "All Products"}
+                    {searchQuery
+                      ? `Results for "${searchQuery}"`
+                      : "Tous  les produits"}
                   </h1>
-                  <p className="text-muted-foreground mt-1" data-testid="text-products-count">
-                    {filteredProducts.length} product
-                    {filteredProducts.length !== 1 ? "s" : ""} found
+                  <p
+                    className="text-muted-foreground mt-1"
+                    data-testid="text-products-count"
+                  >
+                    {filteredProducts.length} produit
+                    {filteredProducts.length !== 1 ? "s" : ""} trouv
                   </p>
                 </div>
 
@@ -143,16 +148,17 @@ export default function Products() {
                     value={sortBy}
                     onValueChange={(value) => setSortBy(value as SortOption)}
                   >
-                    <SelectTrigger
-                      className="w-40"
-                      data-testid="select-sort"
-                    >
+                    <SelectTrigger className="w-40" data-testid="select-sort">
                       <SelectValue placeholder="Sort by" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="newest">Newest</SelectItem>
-                      <SelectItem value="price-low">Price: Low to High</SelectItem>
-                      <SelectItem value="price-high">Price: High to Low</SelectItem>
+                      <SelectItem value="price-low">
+                        Price: Low to High
+                      </SelectItem>
+                      <SelectItem value="price-high">
+                        Price: High to Low
+                      </SelectItem>
                       <SelectItem value="name">Name</SelectItem>
                     </SelectContent>
                   </Select>

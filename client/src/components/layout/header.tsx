@@ -50,7 +50,10 @@ export function Header({ onSearch, searchQuery = "" }: HeaderProps) {
               <SheetContent side="left" className="w-72">
                 <nav className="flex flex-col gap-4 mt-8">
                   <Link href="/">
-                    <span className="text-2xl font-bold text-foreground" data-testid="link-logo-mobile">
+                    <span
+                      className="text-2xl font-bold text-foreground"
+                      data-testid="link-logo-mobile"
+                    >
                       AfriShop
                     </span>
                   </Link>
@@ -92,7 +95,7 @@ export function Header({ onSearch, searchQuery = "" }: HeaderProps) {
                 className="text-xl md:text-2xl font-bold text-foreground"
                 data-testid="link-logo"
               >
-                AfriShop
+                AKENA-ZYMA
               </span>
             </Link>
 
@@ -146,11 +149,7 @@ export function Header({ onSearch, searchQuery = "" }: HeaderProps) {
             </Button>
 
             <Link href="/admin">
-              <Button
-                size="icon"
-                variant="ghost"
-                data-testid="button-admin"
-              >
+              <Button size="icon" variant="ghost" data-testid="button-admin">
                 <User className="h-5 w-5" />
               </Button>
             </Link>
@@ -177,10 +176,7 @@ export function Header({ onSearch, searchQuery = "" }: HeaderProps) {
           </div>
         </div>
 
-        <form
-          onSubmit={handleSearch}
-          className="md:hidden pb-3"
-        >
+        <form onSubmit={handleSearch} className="md:hidden pb-3">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
