@@ -54,9 +54,10 @@ app.get("/", (req, res) => {
 });
 
   const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(port, "127.0.0.1", () => {
-    log(`serving on http://127.0.0.1:${port}`);
-  });
+  httpServer.listen(port, "0.0.0.0", () => {
+  log(`serving on port ${port}`);
+});
+
 }
 
 start().catch((err) => {
