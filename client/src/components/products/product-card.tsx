@@ -64,7 +64,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="p-4 flex flex-col flex-1">
           <div className="flex items-start justify-between gap-2 mb-2">
-            <Badge variant="secondary" size="sm">
+            <Badge variant="secondary">
               {stockStatus.label}
             </Badge>
           </div>

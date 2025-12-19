@@ -143,7 +143,7 @@ export function ProductFilters({
             <SlidersHorizontal className="h-4 w-4 mr-2" />
             Filters
             {activeFilterCount > 0 && (
-              <Badge variant="default" className="ml-2" size="sm">
+              <Badge variant="default" className="ml-2">
                 {activeFilterCount}
               </Badge>
             )}

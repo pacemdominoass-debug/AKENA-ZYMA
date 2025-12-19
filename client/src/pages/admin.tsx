@@ -361,12 +361,11 @@ export default function Admin() {
                                 ? "secondary"
                                 : "default"
                             }
-                            size="sm"
                           >
                             Stock: {product.stock}
                           </Badge>
                           {product.featured && (
-                            <Badge variant="default" size="sm">
+                            <Badge variant="default">
                               Featured
                             </Badge>
                           )}
