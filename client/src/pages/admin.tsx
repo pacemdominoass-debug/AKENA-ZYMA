@@ -269,13 +269,13 @@ export default function Admin() {
                           {product.description}
                         </p>
                         {product.featured && (
-                          <Badge variant="default" size="sm" className="mt-1">
+                          <Badge variant="default" className="mt-1" text-xs px-2 py-0.5">
                             Featured
                           </Badge>
                         )}
                       </div>
                       <div>
-                        <Badge variant="secondary" size="sm">
+                        <Badge variant="secondary">
                           {categoryLabels[product.category]}
                         </Badge>
                       </div>
@@ -291,7 +291,6 @@ export default function Admin() {
                               ? "secondary"
                               : "default"
                           }
-                          size="sm"
                         >
                           {product.stock}
                         </Badge>
